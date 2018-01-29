@@ -1,3 +1,9 @@
+## Learning Objectives: 	
+- Subscript strings 
+- Combine strings and/or string literals 
+### Trouble problem from F17: 10.6.6) Order out of (23.9%)
+### Problem in S18: 16.6) Order out of
+
 ## Problem: Given strings assigment\_1 and assignment\_2, shown below, use string indexing to extract the due dates of each assignment and print the due dates, separated by a comma and a space.
     assignment_1 = "Maze Game,Jan. 26,10pts"
 	assignment_2 = "Types,Feb. 2,10pts"
