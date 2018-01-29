@@ -7,6 +7,10 @@
 ## Problem: Given strings assigment\_1 and assignment\_2, shown below, use string indexing to extract the due dates of each assignment and print the due dates, separated by a comma and a space.
     assignment_1 = "Maze Game,Jan. 26,10pts"
 	assignment_2 = "Types,Feb. 2,10pts"
+### Step 0: Understanding the problem.
+The idea of this problem is that you are given two strings, assignment\_1 and assignment\_2, each representing some details about a particular assignment. The goal is to use string indexing to extract the due date from each assignment string and print the due dates as a neatly formatted list. So the expected output is 
+
+	Jan. 26, Feb. 2
 ### Step 1: Find the indexes of each due date.
 <table>
 	<tr>
@@ -113,17 +117,31 @@ Doing the same thing for assignment_2 we can see we need to use
 	</tr>
 </table> 
 
-### Step 2: Print out the due dates, separated by commas. 
-We know we can use the + operator to concatenate (combine) strings. This can be done directly in the print statement. So 
+### Step 2: Create the formatted (with a comma and space) due date string. 
+We know we can use the + operator to concatenate (combine) strings. So 
 
-	print(assignment_1[10:17] + assignment_2[6:11]) 
-will print out 
+	assignment_1[10:17] + assignment_2[6:11]
+gives us
 
 	Jan. 26Feb. 2
-
 But this isn't exactly what we want. We can also concatenate string literals using the + operator. String literals are any string values in quotation marks. So `assignment_1` is a variable, while `"Maze Game,Jan. 26,10pts"` is the string literal value we store in the variable. So with that in mind, we can use 
 
-	print(assignment_1[10:17] + ", " + assignment_2[6:11]) #Notice the space!
-which will print out 
+	assignment_1[10:17] + ", " + assignment_2[6:11] #Notice the space!
+which gives us
 	
 	Jan. 26, Feb. 2
+
+### Step 3: Print out the result.
+To display the string created in Step 2, we can store it in a variable like this: 
+
+	due_dates = assignment_1[10:17] + ", " + assignment_2[6:11]
+then print out the variable we created: 
+	
+	print(due_dates)
+or, we can simply print the statement from Step 2 directly by putting it in the print statement. 
+
+	print(assignment_1[10:17] + ", " + assignment_2[6:11])
+
+### Solution:
+
+	print(assignment_1[10:17] + ", " + assignment_2[6:11])
