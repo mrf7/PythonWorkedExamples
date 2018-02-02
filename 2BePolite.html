@@ -1,0 +1,78 @@
+<h3 id="trouble-problem-from-f17-1333-be-polite">Trouble problem from F17: 13.3.3) Be Polite</h3>
+<h3 id="problem-in-s18-213-be-polite">Problem in S18: 21.3) Be Polite</h3>
+<h2 id="learning-objectives">Learning Objectives:</h2>
+<ul>
+<li>Define/Call Function with return value</li>
+<li>Define/Call a function with an argument</li>
+<li>Define/Call Function with return value</li>
+<li>Define/Call a function with an argument</li>
+<li>Compare/contrast printing vs returning from a function </li>
+<li>String Immutability</li>
+</ul>
+<h2 id="problem-you-want-to-be-able-to-go-to-a-website-by-simply-typing-the-name-of-the-website-instead-of-the-full-address-eg-tpying-google-instead-of-httpsgooglecom-create-a-function-called-make_address-that-takes-the-name-of-a-website-returns-the-website-name-with-htpps-added-to-the-beginning-and-com-added-to-the-end-call-this-function-with-your-2-favorite-websites-and-print-the-results-to-test-it">Problem: You want to be able to go to a website by simply typing the name of the website instead of the full address (e.g. tpying Google instead of https://google.com). Create a function called make_address that takes the name of a website returns the website name with  &ldquo;htpps://&rdquo; added to the beginning and &ldquo;.com&rdquo; added to the end. Call this function with your 2 favorite websites and print the results to test it.</h2>
+<h3 id="step-0-understanding-the-problem">Step 0: Understanding the problem:</h3>
+<p>The goal here is to create a function that takes one string (the name of the website) and returns that string with something added to <br />
+the beginning and the end. Then we have to test the function with a few of our favorite websites. </p>
+<h3 id="step-1-create-the-function-make_address">Step 1: Create the function make_address:</h3>
+<p>First thing we need to do is create a function that takes a single string. We do this using the <code>def</code> keyword (short for <strong>define</strong> function). A function definition has 4 parts: the <strong>def</strong> keyword, the name of the function, the names of the parameters the function takes, and a colon (&lsquo;:&rsquo;). The <strong>def</strong> keyword goes first, followed by function name, then the parameter names in parenthesis, like below. </p>
+<pre class="codehilite"><code>def function_name(parameter1, parameter2):</code></pre>
+
+
+<p>In this case, the function name is make_address and it takes one parameter, we&rsquo;ll call it &ldquo;name&rdquo;. So our function definition is:</p>
+<pre class="codehilite"><code>def make_address(name):</code></pre>
+
+
+<h3 id="step-2-creating-the-web-address">Step 2: Creating the web address.</h3>
+<p>To combine two strings, we can use the <code>+</code> operator. So to build our website address we have to &lsquo;add&rsquo; the string &ldquo;https://&rdquo; to the beginning of our parameter name and add &lsquo;.com&rsquo; to the end.</p>
+<pre class="codehilite"><code>&quot;https://&quot; + name + &quot;.com&quot;</code></pre>
+
+
+<p>However, Strings in Python are <strong>immutable</strong> meaning they cannot be changed. So the expression above doesn&rsquo;t change name, just like writing 5 + 2 doesn&rsquo;t change the value of 5 or 2. So to make sure we keep the result we need to store it in a variable. </p>
+<pre class="codehilite"><code>URL = &quot;https://&quot; + name + &quot;.com&quot;</code></pre>
+
+
+<p>So now the variable URL holds the URL created using whatever website name was given to our function. </p>
+<h3 id="step-3-return-the-url">Step 3: Return the URL</h3>
+<p>Returning a value from a function is simply done using the <code>return</code> statement. Since the variable URL holds the value we want to return, we can write: </p>
+<pre class="codehilite"><code>return URL</code></pre>
+
+
+<p>to return the value stored in URL. Alternatively, we can skip the step of saving the value in a variable and put the string addition directly into the return statement. </p>
+<pre class="codehilite"><code>return &quot;https://&quot; + name + &quot;.com&quot;</code></pre>
+
+
+<h3 id="step-3-put-the-pieces-of-make_address-together">Step 3: Put the pieces of make_address together:</h3>
+<p>Now that we have all the parts of our function, we can put it together to make a working function.</p>
+<pre class="codehilite"><code>def make_address(name):
+    URL = &quot;https://&quot; + name + &quot;.com&quot;
+    return URL</code></pre>
+
+
+<h3 id="step-4-testing-the-function">Step 4: Testing the function:</h3>
+<p>Now that we&rsquo;ve created the function <code>make_address</code>, we can call it a few times with different website names to test it. To call a function you write the function name with values you want to give parameters in parentheses. This can be done using a <strong>String literal</strong> (any characters between quotation marks that python reads as a value instead of code) or by putting variable names.</p>
+<pre class="codehilite"><code>make_address(&quot;Google&quot;)</code></pre>
+
+
+<p>gives our function the string literal &ldquo;Google&rdquo; </p>
+<pre class="codehilite"><code>site_name = &quot;Facebook&quot;
+make_address(site_name)</code></pre>
+
+
+<p>gives our function the value stored in the variable site_name, which is &ldquo;Facebook&rdquo;<br />
+We also need to make sure to print the return value of our function so we can see if the result is right. The return value can be stored in a variable which we can then print:</p>
+<pre class="codehilite"><code>URL = make_address(&quot;Google&quot;)
+print(URL)</code></pre>
+
+
+<p>or we can put the function call inside print and print will use the return value directly</p>
+<pre class="codehilite"><code>print(make_address(&quot;Facebook&quot;))</code></pre>
+
+
+<h3 id="solution">Solution:</h3>
+<p>Now to put it all together, we need to make sure to put the function before we call the function. Since python reads the lines of your program, calling a function above the function itself means Python hasn&rsquo;t seen that function yet, so as far as Python is concerned it doesn&rsquo;t exist yet. We also have to make sure our indentation is correct so the calls to the function <code>make_address</code> is outside of the function. </p>
+<pre class="codehilite"><code>def make_address(name):
+    URL = &quot;https://&quot; + name + &quot;.com&quot;
+    return URL
+
+print(make_address(&quot;Facebook&quot;))
+print(make_address(&quot;Google&quot;))</code></pre>
