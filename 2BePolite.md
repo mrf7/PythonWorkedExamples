@@ -9,7 +9,7 @@
 - Compare/contrast printing vs returning from a function 
 - String Immutability
 
-## Problem: You want to be able to go to a website by simply typing the name of the website instead of the full address (e.g. tpying Google instead of https://google.com). Create a function called make_address that takes the name of a website returns the website name with  "htpps://" added to the beginning and ".com" added to the end. Call this function with your 3 favorite websites and print the results to test it. 
+## Problem: You want to be able to go to a website by simply typing the name of the website instead of the full address (e.g. tpying Google instead of https://google.com). Create a function called make_address that takes the name of a website returns the website name with  "htpps://" added to the beginning and ".com" added to the end. Call this function with your 2 favorite websites and print the results to test it. 
 
 ### Step 0: Understanding the problem:
 The goal here is to create a function that takes one string (the name of the website) and returns that string with something added to 
