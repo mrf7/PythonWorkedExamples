@@ -1,4 +1,4 @@
-<h3 id="problem-in-s18-211211-myster-mathstrings">Problem in S18: 21.1/21.1) Myster Math/Strings</h3>
+<h3 id="problem-in-s18-211211-mystery-mathstrings">Problem in S18: 21.1/21.1) Mystery Math/Strings</h3>
 <h2 id="learning-objectives">Learning Objectives:</h2>
 <ul>
 <li>Reading and responding to unit tests</li>
@@ -34,13 +34,13 @@ Actually returned: <code>0</code></p>
 <p>After running the unit tests again, this is our output:</p>
 <p>Feedback: Incorrect Answer <br />
 Instructor Feedback<br />
-Your mysterious_math function did not return the right value.<br />
+Your mystery_machine function did not return the right value.<br />
 Given arguments: <code>4, 3</code><br />
 Expected return: <code>7</code><br />
 Actually returned: <code>12</code></p>
 <p>Looks like our function pass the first unit test (input of 2 and 2) but failed the test when it was given 4 and 3. The expected output was 7 but our function produced 12. Based on this we realize <code>mystery_machine</code> is actually supposed to add the two numbers, not multiply them. This will pass the first unit test because 2+2 produces the expected 4, and the second because 4+3=7. </p>
 <h3 id="step-4-trying-again">Step 4: Trying again:</h3>
-<p>Lets modify the function again to return the sum of the two numbers instead of the product and run the unit tests again. </p>
+<p>Let&rsquo;s modify the function again to return the sum of the two numbers instead of the product and run the unit tests again. </p>
 <pre class="codehilite"><code>def mystery_machine(a,b): 
     return a+b</code></pre>
 
