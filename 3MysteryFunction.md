@@ -1,4 +1,4 @@
-### Problem in S18: 21.1/21.1) Myster Math/Strings
+### Problem in S18: 21.1/21.1) Mystery Math/Strings
 
 ## Learning Objectives: 
 - Reading and responding to unit tests
@@ -38,7 +38,7 @@ After running the unit tests again, this is our output:
 
 Feedback: Incorrect Answer 
 Instructor Feedback
-Your mysterious_math function did not return the right value.
+Your mystery_machine function did not return the right value.
 Given arguments: `4, 3`
 Expected return: `7`
 Actually returned: `12`
@@ -46,7 +46,7 @@ Actually returned: `12`
 Looks like our function pass the first unit test (input of 2 and 2) but failed the test when it was given 4 and 3. The expected output was 7 but our function produced 12. Based on this we realize `mystery_machine` is actually supposed to add the two numbers, not multiply them. This will pass the first unit test because 2+2 produces the expected 4, and the second because 4+3=7. 
 
 ### Step 4: Trying again:
-Lets modify the function again to return the sum of the two numbers instead of the product and run the unit tests again. 
+Let's modify the function again to return the sum of the two numbers instead of the product and run the unit tests again. 
 
 	def mystery_machine(a,b): 
 		return a+b
