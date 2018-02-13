@@ -1,0 +1,46 @@
+<h2 id="problem-write-a-function-called-hide_password-that-takes-a-password-as-a-string-and-returns-a-hidden-password-string-the-hidden-password-string-should-be-the-same-length-as-the-string-give-but-with-all-the-characters-replaced-with-a-question-mark">Problem: Write a function called <code>hide_password</code> that takes a password as a string and returns a &ldquo;hidden&rdquo; password string. The hidden password string should be the same length as the string give, but with all the characters replaced with a question mark.</h2>
+<p>For example, the function would convert <code>"password"</code> to <code>"????????"</code>. </p>
+<p>Call the function twice to test it (don&rsquo;t use your real password, that&rsquo;s a bad idea)</p>
+<h2 id="step-0-understanding-the-problem">Step 0: Understanding the problem:</h2>
+<p>We need to write a function that takes a string and returns a string that is the same length but consists of only question marks. The first thing we&rsquo;ll need to do is figure out the length of the password string then we&rsquo;ll have to create a string of question marks the same length. </p>
+<h2 id="step-1-creating-the-function-header">Step 1: Creating the function header:</h2>
+<p>We need to create a function called <code>hide_password</code> that takes a password string.</p>
+<pre class="codehilite"><code>def hide_password(password):</code></pre>
+
+
+<h2 id="step-2-finding-the-length-of-the-password">Step 2: Finding the length of the password:</h2>
+<p>To find the length of a string we can use the built in <code>len</code> function on the string. This function takes in a string and returns the length of that string. We can save that number in a variable called length</p>
+<pre class="codehilite"><code>length = len(password)</code></pre>
+
+
+<h2 id="step-3-creating-a-string-of-all-question-marks">Step 3: Creating a string of all question marks:</h2>
+<p>Now that we know how long to make the string of question marks, we need a way to create it. Luckily python makes this easy for us by allowing us to &ldquo;multiply&rdquo; strings by integers to duplicate them. For example, <code>"VT" * 3</code> gives us the string <code>"VTVTVT"</code>. With this we can create our string of question marks by multiplying a string with just a question mark by the length of the password, like this: </p>
+<pre class="codehilite"><code>&quot;?&quot; * length</code></pre>
+
+
+<h2 id="step-4-return-the-hidden-password">Step 4: Return the hidden password:</h2>
+<p>We can tell our function to return the string we created in Step 3 by adding the return statement before it: </p>
+<pre class="codehilite"><code>return &quot;?&quot; * length</code></pre>
+
+
+<p>Now all the parts of our function can be put together: </p>
+<pre class="codehilite"><code>def hide_password(password): 
+    length = len(password)
+    return &quot;?&quot; * length</code></pre>
+
+
+<h2 id="step-5-calling-the-function">Step 5: Calling the function:</h2>
+<p>Now we need to call our function and print the result twice. </p>
+<pre class="codehilite"><code>print(hide_password(&quot;Password123&quot;))
+print(hide_password(&quot;12345&quot;))</code></pre>
+
+
+<p>Side note, if either of these is your password, you should definitely change it. </p>
+<h2 id="solution">Solution:</h2>
+<p>Putting everything together gives us the solution:</p>
+<pre class="codehilite"><code>def hide_password(password): 
+    length = len(password)
+    return &quot;?&quot; * length
+
+print(hide_password(&quot;Password123&quot;))
+print(hide_password(&quot;12345&quot;))</code></pre>
