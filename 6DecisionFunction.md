@@ -5,8 +5,8 @@
 - Define/Call a function
 - Define/Call a function with multiple parameters of varied types
 - Express logic structure as if statement
-- Using boolean operators
-
+- Use boolean operators
+- Distinguish literals vs variables
 ## Problem: Create a function called `weekend_plan` that takes 2 paramaters. The first parameter should be a boolean that is true if you have homework due on monday and false otherwise, and an integer the represents your age. The function should capture the following logic
 
     If you have homework due,
@@ -16,7 +16,7 @@
     If you don't have homework, but you are under 21,
         print "Play video games!"
         
-You should call your function with your own values to test it. 
+You should call your function twice to test it: once by passing literal values and once by passing variables.
 
 ## Step 0: Understanding the problem: 
 We need to create a function that takes two parameters, a boolean and an integer, and uses those values to dermine and print what we should do this weekend. This can be done using an if statement.
@@ -43,13 +43,61 @@ Now we know the first else if will only be checked if `has_homework` is false, s
     elif ???   # Else if for video games    
 The final part of the if statement will only be checked if the first two failed, meaning `has_homework` and `age >= 21` are both false. Since that is the exact condition we need to print "Play video games", we don't need to check anything at all. Code under the `else` keyword only execute if everything else in the if statement was false. 
 
-        if has_homework:
+    if has_homework:
         print("Do your homework!")
     elif age >= 21:
         print("Tots happy hour!)
     else:
         print("Play video games!)
         
-Step 2.5: Alternative if statements: 
+## Step 2.5: Alternative if statements:
+As we noted before, there are many other ways we could've written our if statement that are "logically equivalent" to the statement we made. As long as two if statement (or series of if statements) capture the same logic and always produces the same output when given the same input, it is logically equivalent. For example, instead of trying to write as little code as possible, we could've tried to match the syntax of the logic we were given as close as possible. 
 
+    if has_homework: 
+        print("Do your homework!")
+    if not has_homework and age > 21:
+        print("Tots happy hour!")
+    if not has_homework and age < 21: 
+        print("Play video games!")
+Notice we had to use the `not` and `and` keywords. The `not` keyword goes before any boolean value and it gives the opposite value. So `not True` gives False and `not False` gives True.
+
+The `and` keyword goes bewtween any two boolean values. As you probably guessed, `and` is used to see if value1 AND value2 are true. If either value is false, the whole statement is false. 
+
+Implementing the given logic using multiple if statements like above makes the code look more like the structure we were given and makesit somewhat easier to understand when reading over it. However, there is a lot of redundant value checking which is usually best to avoid. 
+
+## Step 3: Putting the function together:
+Since our function isn't meant to return anything, all we need to do is put our if statement in the function 
+
+    `def weekend_plan(has_homework, age): 
+        if has_homework: 
+            print("Do your homework!")
+        if not has_homework and age > 21:
+            print("Tots happy hour!")
+        if not has_homework and age < 21: 
+            print("Play video games!")
+
+## Step 4: Call our function: 
+When you call a function with more than one arguments, you need to make sure you get the type and order of the arguments correct. The function we wrote takes the `has_homework` boolean, then the `age` integer. The problem also said we should call it once with literal values and once with variables. If you don't remember, a literal value is pretty much what it says: literally a value, while a variable is something we can store values in. Some examples of literal values are `"A string"`, `4`, `True`. So to call a function with literal values we can just pass the values we want to use directly into the function call: 
+    
+    weekend_plan(True, 22)
+ For our second function call, we need to store the values we want to use in variables first, then give the function those variables. 
  
+    homework_due = False
+    myAge = 19
+    weekend_plan(homework_due, myAge)
+    
+## Solution: 
+
+    `def weekend_plan(has_homework, age): 
+        if has_homework: 
+            print("Do your homework!")
+        if not has_homework and age > 21:
+            print("Tots happy hour!")
+        if not has_homework and age < 21: 
+            print("Play video games!")
+    
+    weekend_plan(True, 22)
+    
+    homework_due = False
+    myAge = 19
+    weekend_plan(homework_due, myAge)
