@@ -7,7 +7,7 @@
 - Express logic structure as if statement
 - Use boolean operators
 - Distinguish literals vs variables
-## Problem: Create a function called `weekend_plan` that takes 2 paramaters. The first parameter should be a boolean that is true if you have homework due on monday and false otherwise, and an integer the represents your age. The function should capture the following logic
+## Problem: Create a function called `weekend_plan` that takes 2 parameters. The first parameter should be a boolean that is true if you have homework due on Monday and false otherwise, and an integer the represents your age. The function should capture the following logic
 
     If you have homework due,
         print "Do your homework!"
@@ -19,10 +19,10 @@
 You should call your function twice to test it: once by passing literal values and once by passing variables.
 
 ## Step 0: Understanding the problem: 
-We need to create a function that takes two parameters, a boolean and an integer, and uses those values to dermine and print what we should do this weekend. This can be done using an if statement.
+We need to create a function that takes two parameters, a boolean and an integer, and uses those values to determine and print what we should do this weekend. This can be done using an if statement.
 
 ## Step 1: Creating the function header:
-We need to create a function named `weekend_plan` that takes two parameters, a boolean that is true if you have homework and an integer representing your age. Since this function will be tested directly by unit tests, we need to make sure the order of the parameters is exactly as stated in the problem. Even though the functions have different types, Python will give values to parameters in the order they are given. If one call to your function expects the parameters to be in a different order than they are, you can have strange, sometimes hard to find bugs in your code. (For example, notice if you type print(True > 21) in python there is no error). With that in mind, our function header looks like:
+We need to create a function named `weekend_plan` that takes two parameters, a boolean that is true if you have homework and an integer representing your age. Since this function will be tested directly by unit tests, we need to make sure the order of the parameters is exactly as stated in the problem. Even though the functions have different types, Python will give values to parameters in the order they are given. If one call to your function expects the parameters to be in a different order than they are, you can have strange, sometimes hard to find bugs in your code. (For example, notice if you type `print(True > 42) in python there is no error). With that in mind, our function header looks like:
     
     `def weekend_plan(has_homework, age): 
 
@@ -61,9 +61,9 @@ As we noted before, there are many other ways we could've written our if stateme
         print("Play video games!")
 Notice we had to use the `not` and `and` keywords. The `not` keyword goes before any boolean value and it gives the opposite value. So `not True` gives False and `not False` gives True.
 
-The `and` keyword goes bewtween any two boolean values. As you probably guessed, `and` is used to see if value1 AND value2 are true. If either value is false, the whole statement is false. 
+The `and` keyword goes between any two boolean values. As you probably guessed, `and` is used to see if value1 AND value2 are true. If either value is false, the whole statement is false. 
 
-Implementing the given logic using multiple if statements like above makes the code look more like the structure we were given and makesit somewhat easier to understand when reading over it. However, there is a lot of redundant value checking which is usually best to avoid. 
+Implementing the given logic using multiple if statements like above makes the code look more like the structure we were given and makes it somewhat easier to understand when reading over it. However, there is a lot of redundant value checking which is usually best to avoid. 
 
 ## Step 3: Putting the function together:
 Since our function isn't meant to return anything, all we need to do is put our if statement in the function 
