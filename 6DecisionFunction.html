@@ -1,0 +1,91 @@
+<h2 id="problem-create-a-function-called-weekend_plan-that-takes-2-parameters-the-first-parameter-should-be-a-boolean-that-is-true-if-you-have-homework-due-on-monday-and-false-otherwise-and-an-integer-the-represents-your-age-the-function-should-capture-the-following-logic">Problem: Create a function called <code>weekend_plan</code> that takes 2 parameters. The first parameter should be a boolean that is true if you have homework due on Monday and false otherwise, and an integer the represents your age. The function should capture the following logic</h2>
+<pre class="codehilite"><code>If you have homework due,
+    print &quot;Do your homework!&quot;
+If you don't have homework due and you are over 21,
+    print &quot;Tots happy hour!&quot;
+If you don't have homework, but you are under 21,
+    print &quot;Play video games!&quot;</code></pre>
+
+
+<p>You should call your function twice to test it: once by passing literal values and once by passing variables.</p>
+<h2 id="step-0-understanding-the-problem">Step 0: Understanding the problem:</h2>
+<p>We need to create a function that takes two parameters, a boolean and an integer, and uses those values to determine and print what we should do this weekend. This can be done using an if statement.</p>
+<h2 id="step-1-creating-the-function-header">Step 1: Creating the function header:</h2>
+<p>We need to create a function named <code>weekend_plan</code> that takes two parameters, a boolean that is true if you have homework and an integer representing your age. Since this function will be tested directly by unit tests, we need to make sure the order of the parameters is exactly as stated in the problem. Even though the functions have different types, Python will give values to parameters in the order they are given. If one call to your function expects the parameters to be in a different order than they are, you can have strange, sometimes hard to find bugs in your code. (For example, notice if you type `print(True &gt; 42) in python there is no error). With that in mind, our function header looks like:</p>
+<pre class="codehilite"><code>`def weekend_plan(has_homework, age):</code></pre>
+
+
+<h2 id="step-2-creating-the-if-statement">Step 2: Creating the if statement:</h2>
+<p>Now that we have our function header and the parameters <code>has_homwork</code> and <code>age</code>, we can create an if statement that captures the logic above. There are a lot of ways to construct this if statement that would work, but we want to find the way that requires writing the least amount of code. Notice that the second to results (Tots happy hour and Play video games) both need has_homework from the first part to be false. So if we put them into an else if, abbreviated <code>elif</code>, after checking <code>has_homework</code>, we only need to check it twice. </p>
+<pre class="codehilite"><code>if has_homework:
+    print(&quot;Do your homework!&quot;)
+elif ???   # Else if for tots    
+elif ???   # Else if for video games</code></pre>
+
+
+<p>Now we know the first else if will only be checked if <code>has_homework</code> is false, so we can simply check if you are at least 21 using the <code>&gt;=</code> operator. </p>
+<pre class="codehilite"><code>if has_homework:
+    print(&quot;Do your homework!&quot;)
+elif age &gt;= 21:
+    print(&quot;Tots happy hour!)
+elif ???   # Else if for video games</code></pre>
+
+
+<p>The final part of the if statement will only be checked if the first two failed, meaning <code>has_homework</code> and <code>age &gt;= 21</code> are both false. Since that is the exact condition we need to print &ldquo;Play video games&rdquo;, we don&rsquo;t need to check anything at all. Code under the <code>else</code> keyword only execute if everything else in the if statement was false. </p>
+<pre class="codehilite"><code>if has_homework:
+    print(&quot;Do your homework!&quot;)
+elif age &gt;= 21:
+    print(&quot;Tots happy hour!)
+else:
+    print(&quot;Play video games!)</code></pre>
+
+
+<h2 id="step-25-alternative-if-statements">Step 2.5: Alternative if statements:</h2>
+<p>As we noted before, there are many other ways we could&rsquo;ve written our if statement that are &ldquo;logically equivalent&rdquo; to the statement we made. As long as two if statement (or series of if statements) capture the same logic and always produces the same output when given the same input, it is logically equivalent. For example, instead of trying to write as little code as possible, we could&rsquo;ve tried to match the syntax of the logic we were given as close as possible. </p>
+<pre class="codehilite"><code>if has_homework: 
+    print(&quot;Do your homework!&quot;)
+if not has_homework and age &gt; 21:
+    print(&quot;Tots happy hour!&quot;)
+if not has_homework and age &lt; 21: 
+    print(&quot;Play video games!&quot;)</code></pre>
+
+
+<p>Notice we had to use the <code>not</code> and <code>and</code> keywords. The <code>not</code> keyword goes before any boolean value and it gives the opposite value. So <code>not True</code> gives False and <code>not False</code> gives True.</p>
+<p>The <code>and</code> keyword goes between any two boolean values. As you probably guessed, <code>and</code> is used to see if value1 AND value2 are true. If either value is false, the whole statement is false. </p>
+<p>Implementing the given logic using multiple if statements like above makes the code look more like the structure we were given and makes it somewhat easier to understand when reading over it. However, there is a lot of redundant value checking which is usually best to avoid. </p>
+<h2 id="step-3-putting-the-function-together">Step 3: Putting the function together:</h2>
+<p>Since our function isn&rsquo;t meant to return anything, all we need to do is put our if statement in the function </p>
+<pre class="codehilite"><code>`def weekend_plan(has_homework, age): 
+    if has_homework: 
+        print(&quot;Do your homework!&quot;)
+    if not has_homework and age &gt; 21:
+        print(&quot;Tots happy hour!&quot;)
+    if not has_homework and age &lt; 21: 
+        print(&quot;Play video games!&quot;)</code></pre>
+
+
+<h2 id="step-4-call-our-function">Step 4: Call our function:</h2>
+<p>When you call a function with more than one arguments, you need to make sure you get the type and order of the arguments correct. The function we wrote takes the <code>has_homework</code> boolean, then the <code>age</code> integer. The problem also said we should call it once with literal values and once with variables. If you don&rsquo;t remember, a literal value is pretty much what it says: literally a value, while a variable is something we can store values in. Some examples of literal values are <code>"A string"</code>, <code>4</code>, <code>True</code>. So to call a function with literal values we can just pass the values we want to use directly into the function call: </p>
+<pre class="codehilite"><code>weekend_plan(True, 22)</code></pre>
+
+
+<p>For our second function call, we need to store the values we want to use in variables first, then give the function those variables. </p>
+<pre class="codehilite"><code>homework_due = False
+myAge = 19
+weekend_plan(homework_due, myAge)</code></pre>
+
+
+<h2 id="solution">Solution:</h2>
+<pre class="codehilite"><code>`def weekend_plan(has_homework, age): 
+    if has_homework: 
+        print(&quot;Do your homework!&quot;)
+    if not has_homework and age &gt; 21:
+        print(&quot;Tots happy hour!&quot;)
+    if not has_homework and age &lt; 21: 
+        print(&quot;Play video games!&quot;)
+
+weekend_plan(True, 22)
+
+homework_due = False
+myAge = 19
+weekend_plan(homework_due, myAge)</code></pre>
