@@ -1,12 +1,12 @@
-### Problem in F17: #16.5.3) Drinking Function, other if problems
-### Problems in F18: #27) If statements 
+### Problem in F17: 33.8) Max Odd
+### Problems in F18: 18.3.4/5) Function with For/For with Function
 
 ## Learning Objectives:
 - Define/Call a function
-- Define/Call a function with multiple parameters of varied types
 - Express logic structure as if statement
-- Use boolean operators
-- Distinguish literals vs variables
+- Build a list in a for loop
+- Call a function with a for loop 
+
 
 ## Problem: Create a function `convert_to_feels` that consumes a number (representing a temperature) and returns `"hot"` if it is above 70, `"cold"` if is below 50, and `"comfortable"` otherwise.
 
