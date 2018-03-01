@@ -1,5 +1,5 @@
-### Problem in F17: 33.8) Max Odd
-### Problems in F18: 18.3.4/5) Function with For/For with Function
+### Problem in F17: 18.3.4/5) Function with For/For with Function 
+### Problems in F18: 33.8) Max Odd
 
 ## Learning Objectives:
 - Define/Call a function
