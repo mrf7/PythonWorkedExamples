@@ -1,0 +1,50 @@
+<h2 id="problem-below-is-a-dictionary-that-maps-the-names-of-dogs-to-their-breed-create-a-function-called-get_breed-that-takes-the-name-of-a-dog-and-returns-that-dogs-breed-if-the-dog-isnt-in-the-dictionary-return-no-dog-call-your-function-twice-to-test-it-and-print-the-result-once-with-a-name-in-the-dictionary-and-once-with-a-name-not-in-the-dictionary">Problem: Below is a dictionary that maps the names of dogs to their breed. Create a function called <code>get_breed</code> that takes the name of a dog and returns that dog&rsquo;s breed. If the dog isn&rsquo;t in the dictionary, return &ldquo;No dog&rdquo;. Call your function twice to test it and print the result: once with a name in the dictionary and once with a name not in the dictionary.</h2>
+<pre class="codehilite"><code>dogs = {&quot;Callie&quot;: &quot;Pitbull&quot;, &quot;Sasha&quot;: &quot;Jack Russell&quot;, &quot;Lexy&quot;: &quot;Chihuahua&quot;, &quot;Tiny&quot;: &quot;Caucasian Shepherd&quot;, &quot;Snowball&quot;: &quot;Poodle&quot;}</code></pre>
+
+
+<h2 id="step-0-understanding-the-problem">Step 0: Understanding the problem:</h2>
+<p>This problem gives us a dictionary to use as &ldquo;global variable&rdquo;. Here global means it goes at the top of our python program and is accessible from anywhere in our program, including in functions. Our task is to create a function that takes the name of a dog and tries to get the breed of the dog from the dictionary. If the name isn&rsquo;t in the dictionary, the function should return &ldquo;No dog&rdquo;</p>
+<h2 id="step-1-create-a-function-header">Step 1: Create a function header:</h2>
+<p>Our function needs to be called <code>get_breed</code> and take a single parameter that holds a string representing the name of a dog. We&rsquo;ll simply call this parameter name:</p>
+<pre class="codehilite"><code>def get_breed(name):</code></pre>
+
+
+<h2 id="step-2-check-for-a-key-in-the-dictionary">Step 2: Check for a key in the dictionary:</h2>
+<p>The first thing we need to do is make sure <code>name</code> is in the dictionary. In python we can do this easily using the <code>in</code> keyword. When working with dictionaries, the expression <code>k in dictionary' will evaluate to true if the value stored in k is a key in dictionary. So to check if the dog called</code>name<code>is stored in the dictionary</code>dogs`, we write </p>
+<pre class="codehilite"><code>name in dogs</code></pre>
+
+
+<p>If this expression is true, we should get the dog&rsquo;s breed from the dictionary. We&rsquo;ll worry about that later so for now we&rsquo;ll pass</p>
+<pre class="codehilite"><code>if name in dogs: 
+    pass</code></pre>
+
+
+<p>Otherwise, we need to return &ldquo;No dog&rdquo;</p>
+<pre class="codehilite"><code>if name in dogs: 
+    pass
+else: 
+    return &quot;No dog&quot;</code></pre>
+
+
+<h2 id="step-3-getting-a-value-from-the-dictionary">Step 3: Getting a value from the dictionary:</h2>
+<p>Now that we&rsquo;ve made sure the name is in our dictionary, we can get the breed from the dictionary using the name. To do this, we use square brackets with the key we want to search for. </p>
+<pre class="codehilite"><code>return dogs[name]</code></pre>
+
+
+<h2 id="step-4-testing-our-function">Step 4: Testing our function:</h2>
+<p>We need to test both cases of our function: when name is in the dictionary and when it is not. This makes sure that both parts of our if statement work as they should. </p>
+<pre class="codehilite"><code>print(get_breed(&quot;Tiny&quot;))
+print(get_breed(&quot;Eric&quot;))</code></pre>
+
+
+<h2 id="solution">Solution:</h2>
+<pre class="codehilite"><code>dogs = {&quot;Callie&quot;: &quot;Pitbull&quot;, &quot;Sasha&quot;: &quot;Jack Russell&quot;, &quot;Lexy&quot;: &quot;Chihuahua&quot;, &quot;Tiny&quot;: &quot;Caucasian Shepherd&quot;, &quot;Snowball&quot;: &quot;Poodle&quot;}
+
+def get_breed(name): 
+    if name in dogs:
+        return dogs[name]
+    else:
+        return &quot;No dog&quot;
+
+print(get_breed(&quot;Tiny&quot;))
+print(get_breed(&quot;Eric&quot;))</code></pre>
