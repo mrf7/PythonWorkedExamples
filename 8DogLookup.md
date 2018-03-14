@@ -20,7 +20,7 @@ Our function needs to be called `get_breed` and take a single parameter that hol
 	def get_breed(name):
 	
 ## Step 2: Check for a key in the dictionary:
-The first thing we need to do is make sure `name` is in the dictionary. In python we can do this easily using the `in` keyword. When working with dictionaries, the expression `k in dictionary' will evaluate to true if the value stored in k is a key in dictionary. So to check if the dog called `name` is stored in the dictionary `dogs`, we write 
+The first thing we need to do is make sure `name` is in the dictionary. In python we can do this easily using the `in` keyword. When working with dictionaries, the expression `k in dictionary` will evaluate to true if the value stored in k is a key in dictionary. So to check if the dog called `name` is stored in the dictionary `dogs`, we write 
 	
 	name in dogs
 
