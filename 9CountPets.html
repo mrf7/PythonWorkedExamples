@@ -1,0 +1,94 @@
+<h2 id="0-read-problem">0) Read Problem</h2>
+<p>Write a function called <code>count_pets</code> that consumes a list of strings of pet types owned and returns the number of each type of pet as a dictionary. Use the Dictionary Counting pattern. Call your function with the following list to test it. </p>
+<pre class="codehilite"><code>[&quot;Dog&quot;, &quot;cat&quot;, &quot;Cat&quot;, &quot;Snake&quot;, &quot;mouse&quot;, &quot;snake&quot;, &quot;dog&quot;, &quot;dog&quot;]</code></pre>
+
+
+<p>Notice the list is written somewhat sloppy. The capitilization is inconsistent. Your function needs to be able to fix this so that &ldquo;Dog&rdquo; and &ldquo;dog&rdquo; go into the same dictionary entry. </p>
+<h2 id="1-interpret-the-problem">1) Interpret the Problem</h2>
+<p>This problem requires us to write a function that uses the Dictionary Counting pattern to create a dictionary that maps pet type to number of pets of that type. The problem also says the words in the list can have inconsistent capitalization and our function has to treat two of the same word as one key in the dictionary. </p>
+<h2 id="2-write-test">2) Write Test</h2>
+<p>Once we understand the problem, it helps to think of the possible cases we can test. If we do these first, we can run our code as we go to make sure we&rsquo;re catching every possibility. </p>
+<p>Here is a basic case with a list of strings with consistent capitalization.</p>
+<pre class="codehilite"><code>pets1 = [&quot;dog&quot;, &quot;cat&quot;, &quot;snake&quot;, &quot;dog&quot;, &quot;lizard&quot;, &quot;cat&quot;, &quot;cat&quot;]
+print(count_pets(pets1))
+# =&gt; &quot;{&quot;DOG&quot;: 2, &quot;CAT&quot;: 3, &quot;SNAKE&quot;: 1, &quot;LIZARD&quot;: 1]</code></pre>
+
+
+<p>The case given in the problem, where the capitalization is inconsistent</p>
+<pre class="codehilite"><code>pets2 = [&quot;Dog&quot;, &quot;cat&quot;, &quot;Cat&quot;, &quot;Snake&quot;, &quot;mouse&quot;, &quot;snake&quot;, &quot;dog&quot;, &quot;dog&quot;]
+print(count_pets(pets2))
+# =&gt; &quot;{&quot;DOG&quot;: 3, &quot;CAT&quot;: 2, &quot;SNAKE&quot;: 2, &quot;MOUSE&quot;: 1]</code></pre>
+
+
+<p>A case with an empty list</p>
+<pre class="codehilite"><code>print(count_pets([])
+# =&gt; &quot;{}&quot;</code></pre>
+
+
+<h2 id="3-create-function-header">3) Create function header</h2>
+<p>Our function should be called <code>count_pets</code> and take 1 parameter. The parameter holds a list of strings representing types of pets so a good name would be <code>pets</code></p>
+<pre class="codehilite"><code>def count_pets(pets): 
+    ...</code></pre>
+
+
+<h2 id="4-initialize-the-dictionary">4) Initialize the Dictionary</h2>
+<p>The first thing we need to do is create a dictionary to add entries to</p>
+<pre class="codehilite"><code>pets_count = {}</code></pre>
+
+
+<h2 id="5-iterate-over-the-list">5) Iterate over the list</h2>
+<p>To check at each entry in the pets list, we should use a for loop. This for loop will look at every string in the list, one at a time. The &ldquo;item&rdquo; variable is the variable that will hold each value in the list as your loop repeats. Since we have a pets list, we should name our item variable pet.</p>
+<pre class="codehilite"><code>for pet in pets:
+    ...</code></pre>
+
+
+<h2 id="6-normalizing-strings">6) Normalizing Strings</h2>
+<p>Since the strings in the list could have inconsistent capitalization, we need a way to &ldquo;normalize&rdquo; the data. In programming, &ldquo;normalize&rdquo; usually means to take data that is in some way inconsistent and change it in a way that makes it easier to process. </p>
+<p>The easiest way to normalize strings that have inconsistent capitalization is to change them all to the same capitalization. This can be done using the <code>upper</code> or <code>lower</code> functions that return the string in all caps and all lowercase, respectively. Since <code>"Dogs".upper()</code> is <code>"DOGS"</code> and <code>"dogs".upper()" is also</code>&ldquo;DOGS&rdquo;`, these two strings can now be seen as the same. </p>
+<p>It doesn&rsquo;t matter which of these we use, so we&rsquo;ll use <code>upper</code>. We&rsquo;ll save this uppercase string in a new variable to use later.</p>
+<pre class="codehilite"><code>petUpper = pet.upper()</code></pre>
+
+
+<h2 id="7-implementing-the-dictionary-count-patter">7) Implementing the Dictionary Count Patter</h2>
+<p>Now we need to update our dictionary for each pet using the Dictionary Count pattern. If the dictionary already contains a key matching the current pet, we should increment the value of the counter value for that key. </p>
+<pre class="codehilite"><code>if petUpper in pets_count:
+    pets_count[petUpper] = pets_count[petUpper] + 1</code></pre>
+
+
+<p>If the key doesn&rsquo;t exist, we should create it and give its counter value an initial value of 1</p>
+<pre class="codehilite"><code>if petUpper in pets_count:
+    pets_count[petUpper] = pets_count[petUpper] + 1
+else: 
+    pets_count[petUpper] = 1</code></pre>
+
+
+<p>Notice we use petUpper as the key. This makes sure that we&rsquo;re not adding &ldquo;dog&rdquo; and &ldquo;Dog&rdquo; as separate keys. Both string will become a single key &ldquo;DOG&rdquo;. </p>
+<h2 id="8-returning-the-result">8) Returning the Result</h2>
+<p>Once our loop finishes, all we have left to do is return the resulting dictionary</p>
+<pre class="codehilite"><code>return pets_count</code></pre>
+
+
+<h2 id="solution">Solution</h2>
+<p>With all the pieces put together we get our solution, which passes the tests we wrote when run! </p>
+<pre class="codehilite"><code>def count_pets(pets): 
+    pets_count = {}
+    for pet in pets:
+        petUpper = pet.upper()
+        if petUpper in pets_count:
+            pets_count[petUpper] = pets_count[petUpper] + 1 
+        else: 
+            pets_count[petUpper] = 1
+
+    return pets_count
+
+# Tests
+pets1 = [&quot;dog&quot;, &quot;cat&quot;, &quot;snake&quot;, &quot;dog&quot;, &quot;lizard&quot;, &quot;cat&quot;, &quot;cat&quot;]
+print(count_pets(pets1))
+# =&gt; &quot;{&quot;DOG&quot;: 2, &quot;CAT&quot;: 3, &quot;SNAKE&quot;: 1, &quot;LIZARD&quot;: 1]
+
+pets2 = [&quot;Dog&quot;, &quot;cat&quot;, &quot;Cat&quot;, &quot;Snake&quot;, &quot;mouse&quot;, &quot;snake&quot;, &quot;dog&quot;, &quot;dog&quot;]
+print(count_pets(pets2))    
+# =&gt; &quot;{&quot;DOG&quot;: 3, &quot;CAT&quot;: 2, &quot;SNAKE&quot;: 2, &quot;MOUSE&quot;: 1]
+
+print(count_pets([])
+# =&gt; &quot;{}&quot;</code></pre>
