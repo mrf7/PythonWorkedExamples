@@ -1,0 +1,109 @@
+<h2 id="0-read-problem">0) Read problem</h2>
+<p>Below is a dictionary of dictionaries representing the students in a class. The keys of the dictionary correspond to the students&rsquo; pid&rsquo;s, while the values correspond do information about the student, such as their name, their classes, and their grades. Create a function called <code>get_grade</code> that takes a single student dictionary and returns their name and grade in CS1064 as a tuple. Call this function on one of the students and assign the result to two variables. Print those variables with &ldquo;has a&rdquo; in between (e.g. <code>"Michael has a 94"</code>). </p>
+<pre class="codehilite"><code>students = { 
+    &quot;mrf7&quot;: {
+        &quot;pid&quot;: &quot;mrf7&quot;,
+        &quot;name&quot;: &quot;Michael&quot;,
+        &quot;year&quot;: &quot;Senior&quot;,
+        &quot;courses&quot;: {
+            &quot;MATH1225&quot;: 85,
+            &quot;CS1064&quot;: 94,
+            &quot;GEOG1014&quot;: 100,
+            &quot;CHEM1035&quot;: 80
+        }
+    },
+    &quot;bob123&quot;: {
+        &quot;pid&quot;:&quot;bob123&quot;,
+        &quot;name&quot;: &quot;Bob&quot;,
+        &quot;year&quot;: &quot;Sophomore&quot;,
+        &quot;courses&quot;: {
+            &quot;ACIS1504&quot;: 70,
+            &quot;APS1074&quot;: 80,
+            &quot;CS1064&quot;: 87,
+            &quot;DASC1464&quot;:90
+        }
+    }, 
+}</code></pre>
+
+
+<h2 id="1-interpret-the-problem">1) Interpret the problem</h2>
+<p>The first part of this problem requires us to write a function called <code>get_grade</code> that takes a dictionary representing a student and returns the student&rsquo;s name and grade in CS1064 as a tuple. This will require us to make a multilevel dictionary access. The second part says we need to call our function on a single student dictionary, so we will have to pull one out of the <code>students</code> dictionary using the pid. Finally we need to concatenate strings to produce the proper output. </p>
+<h2 id="2-understand-the-data-structure">2) Understand the Data Structure</h2>
+<p>The <code>students</code> data structure is a dictionary of dictionaries. Each of the internal dictionaries represents a student and has the keys &ldquo;pid&rdquo;, &ldquo;name&rdquo;, &ldquo;year&rdquo;, and &ldquo;courses&rdquo;. The values for the pid, name, and year keys are string and the value for the courses key is another dictionary.   </p>
+<p>The dictionary corresponding to the courses key uses the course name as the keys and the grade as the values. </p>
+<h2 id="3-create-function-header">3) Create function header</h2>
+<p>Our function needs to be called <code>get_grade</code> and take a single parameter holding a student dictionary. So a reasonable parameter name could simply be <code>student</code>. </p>
+<pre class="codehilite"><code>def get_grade(student): 
+    ...</code></pre>
+
+
+<h2 id="4-get-a-value-from-a-dictionary">4) Get a value from a dictionary</h2>
+<p>The name of the student is stored in the student dictionary under the <code>"name"</code> key. To retrieve it all we have to do is perform a simple dictionary access and store the result in a variable. </p>
+<pre class="codehilite"><code>name = student[&quot;name&quot;]</code></pre>
+
+
+<h2 id="5-get-a-value-from-a-dictionary-within-a-dictionary">5) Get a value from a dictionary within a dictionary</h2>
+<p>The next piece of information we need is the student&rsquo;s grade in CS1064. To obtain this we first need to get the dictionary of courses from the student dictionary </p>
+<pre class="codehilite"><code>student[&quot;courses&quot;]</code></pre>
+
+
+<p>From the dictionary of courses, we need to get the value for the key &ldquo;CS1064&rdquo; and save it in a variable.</p>
+<pre class="codehilite"><code>grade = student[&quot;courses&quot;][&quot;CS1064&quot;]</code></pre>
+
+
+<h2 id="6-return-a-tuple">6) Return a tuple</h2>
+<p>Now that we have to two pieces of information that we need, we need to return both values. This can be done by returning a tuple. With a tuple we can return multiple values that can be stored in multiple variables when our function is called. To create a tuple, we simply put write our values separated by a comma, likes this:</p>
+<pre class="codehilite"><code>return name, grade</code></pre>
+
+
+<h2 id="8-store-multiple-return-values">8) Store multiple return values</h2>
+<p>When we call our function, we need to give it a dictionary representing a student. We can get this by doing a dictionary access on the <code>students</code> dictionary. Let&rsquo;s use Bob in our test.</p>
+<pre class="codehilite"><code>get_grade(students[&quot;bob123&quot;])</code></pre>
+
+
+<p>The problem says that we should store the two return values from our function in two separate variables. We do this the same was as we create a tuple, simply separating our variables by commas. </p>
+<pre class="codehilite"><code>name, grade = get_grade(students[&quot;bob123&quot;])</code></pre>
+
+
+<p>This will store the first value returned by our function in name, and the second value in grade. </p>
+<h2 id="9-concatenate-the-string">9) Concatenate the string</h2>
+<p>This problem requires us to print messages of the form <code>"[Name] has a [Grade]"</code>. Since we already have name and grade, we can simply concatenate the strings using the <code>+</code> operator. However, since grade is a number and not a string, we need to use <code>str</code> to convert it to a string. </p>
+<pre class="codehilite"><code>name + &quot; has a &quot; + str(grade)</code></pre>
+
+
+<p>To see if our function produced the right output, we print the result</p>
+<pre class="codehilite"><code>print(name + &quot; has a &quot; + str(grade))</code></pre>
+
+
+<h2 id="solution">Solution</h2>
+<pre class="codehilite"><code>def get_grade(student): 
+    name = student[&quot;name&quot;]
+    grade = student[&quot;courses&quot;][&quot;CS1064&quot;]
+    return name, grade
+
+students = { 
+    &quot;mrf7&quot;: {
+        &quot;pid&quot;: &quot;mrf7&quot;,
+        &quot;name&quot;: &quot;Michael&quot;,
+        &quot;year&quot;: &quot;Senior&quot;,
+        &quot;courses&quot;: {
+            &quot;MATH1225&quot;: 85,
+            &quot;CS1064&quot;: 94,
+            &quot;GEOG1014&quot;: 100,
+            &quot;CHEM1035&quot;: 80
+        }
+    },
+    &quot;bob123&quot;: {
+        &quot;pid&quot;:&quot;bob123&quot;,
+        &quot;name&quot;: &quot;Bob&quot;,
+        &quot;year&quot;: &quot;Sophomore&quot;,
+        &quot;courses&quot;: {
+            &quot;ACIS1504&quot;: 70,
+            &quot;APS1074&quot;: 80,
+            &quot;CS1064&quot;: 87,
+            &quot;DASC1464&quot;:90
+        }
+    }, 
+}
+name, grade = get_grade(students[&quot;bob123&quot;])
+print(name + &quot; has a &quot; + str(grade))</code></pre>
