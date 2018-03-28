@@ -1,6 +1,11 @@
 Problem/Motivation
 	Are worked examples an effective way to strengthen knowledge and alleviate feelings of confusion?
 		We want to see if providing worked examples that are similar to questions that commonly cause confusion makes students better able to solve the trouble questions and more importantly, better able to apply the concepts in general. 
+	Questions
+		How do students take advantage of examples(Tracking data, survey)
+		Why do they use WEs (Survey)
+		Do WEs improve knowledge (Time on task analysis)
+		DO WEs help students get started (Survey)
 
 Background and Related Work
 
