@@ -21,4 +21,6 @@ Approach and Uniqueness
 		Took student survey on effectiveness and usage of WE 
 	
 Results and Contributions 
-	TBD
+	Discuss best practice questions 
+		Talk in terms of things we learned while making the examples 
+		
