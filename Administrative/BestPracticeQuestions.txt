@@ -1,0 +1,7 @@
+How similar should worked examples be to trouble problems? 
+Should WEs focus on questions with conceptual confusion or problems with wording confusion, or both?
+	More importantly, which situation do WEs help more?
+How broken up should steps be? 
+How do we know if a WE or restructuring the problem is the right solution to a trouble problem?
+Should/Can the WE be interactive? 
+	i.e. Instead of a simple written out solution, have students actively engage with the WE.

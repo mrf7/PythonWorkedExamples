@@ -1,0 +1,19 @@
+Problem/Motivation
+	Are worked examples an effective way to strengthen knowledge and alleviate feelings of confusion?
+		We want to see if providing worked examples that are similar to questions that commonly cause confusion makes students better able to solve the trouble questions and more importantly, better able to apply the concepts in general. 
+
+Background and Related Work
+
+	
+Approach and Uniqueness
+	Creation
+		Determined what problems seemed to be the most difficult for students in the previous semester as well as new problems this semester that may cause confusion. 
+		Made WEs that had similar format and used the same concepts as the trouble problems
+		Added links to WE on the relevant trouble problem
+	Evaluation
+		Measured difficulty of the trouble questions this semester using same metric
+		Tracked interaction with select WEs to gauge how often they were viewed and to what extent
+		Took student survey on effectiveness and usage of WE 
+	
+Results and Contributions 
+	TBD
