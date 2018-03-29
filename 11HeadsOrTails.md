@@ -37,7 +37,7 @@ Now that we've read the contents of the file into a string, we don't need to hav
 	coinFile.close()
 
 	
-## 5) Iterate Over Character's in a File
+## 5) Iterate Over Characters in a File
 Now that we have the contents of the file in a string, we can use a for loop to iterate over each character in the file. 
 
 	for flip in coinString:
