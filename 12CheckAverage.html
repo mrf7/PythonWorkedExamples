@@ -1,0 +1,81 @@
+<h2 id="0-read-problem">0) Read Problem</h2>
+<p>You have a file called <code>grades.txt</code> (shown below) that contains every student&rsquo;s grade on a recent test, along with their name. To see if you need to apply a curve, you need to know the average grade for all the students. Find the average grade and print it. </p>
+<p><strong>Link to grade.txt</strong></p>
+<h2 id="1-interpret-the-problem">1) Interpret the Problem</h2>
+<p>This problem requires us to get the grades students scored from <code>grades.txt</code> and calculate the average. First, we need to see what <code>grades.txt</code> looks like. After opening <code>grades.txt</code>, we see it has a student&rsquo;s name and grade on each line. The name and grade are separated by a colon (&lsquo;:&rsquo;). Generally, the file looks something like this:</p>
+<pre class="codehilite"><code>Michael:90
+Steven:70
+Logan:67
+...</code></pre>
+
+
+<p>Since each line holds information for exactly one student, we need to look at each line. We can do this with a <code>for</code> loop.<br />
+Once we get the individual lines, we see the name and grade are separated by a colon. To get the grade, we can use the string method <code>split()</code>.</p>
+<p>To determine the average, we can use the Sum and Count patterns. We will find the sum of all of the grade then divide the sum by the number of grades in the file. </p>
+<h2 id="2-setting-up-sum-and-count-variables">2) Setting up Sum and Count Variables</h2>
+<p>For the Sum and Count pattern, we need to create the variables storing the sum and count before our loop begins.</p>
+<pre class="codehilite"><code>sum = 0
+count = 0</code></pre>
+
+
+<h2 id="3-opening-a-file">3) Opening a File</h2>
+<p>Working with files in python is just like working with files normally, we first have to open the file. To open a file in python, we use the open() function. This function takes the name of the file as a string and returns a file object representing the open file. We need to save this file so we can close it later:</p>
+<pre class="codehilite"><code>gradesFile = open('grades.txt')</code></pre>
+
+
+<h2 id="4-iterate-over-lines-in-a-file">4) Iterate Over Lines in a File</h2>
+<p>To look at each line of a file, we can iterate over a file object, which is the return value of the <code>open()</code> function. </p>
+<pre class="codehilite"><code>for line in gradeFile:
+    ...</code></pre>
+
+
+<p>This for loop will iterate over the file, line by line. </p>
+<h2 id="5-extract-from-the-string">5) Extract from the String</h2>
+<p>Now that we have a line of the file, we need to get the grade. Since the student&rsquo;s name and grade are separated by a colon, we can use the <code>split()</code> method to separate them. The split method takes the character that separates the different parts of the string and returns a list of each of those part. So if <code>line</code> was `&rdquo;Michael:90&rdquo;, </p>
+<pre class="codehilite"><code>line.split(&quot;:&quot;)</code></pre>
+
+
+<p>returns the list <code>["Michael":"90"]</code>. To get the grade from this list, we can use the index 1</p>
+<pre class="codehilite"><code>line.split(&quot;:&quot;)[1]</code></pre>
+
+
+<p>Notice that the second item in the list is <code>"90"</code>, which has quotation marks. This means it is a string, which makes sense because it was originally part of a string. To convert this string to a number, we can use the <code>int()</code> function, which takes a string and parse an integer out of it. </p>
+<pre class="codehilite"><code>grade = int(line.split(&quot;:&quot;)[1])</code></pre>
+
+
+<h2 id="6-update-the-sum">6) Update the Sum</h2>
+<p>Now that we have the grade as an int, we can add it to our running sum</p>
+<pre class="codehilite"><code>sum = sum + grade</code></pre>
+
+
+<h2 id="7-increment-the-count">7) Increment the Count</h2>
+<p>Every time we add a grade to the sum, we need to increase our count by one </p>
+<pre class="codehilite"><code>count = count + 1</code></pre>
+
+
+<h2 id="8-close-the-file">8) Close the File</h2>
+<p>Once our <code>for</code> loop finishes, we are finished with <code>grades.txt</code>, so we should close it. This is done with the <code>close</code> method. </p>
+<pre class="codehilite"><code>gradeFile.close()</code></pre>
+
+
+<h2 id="9-calculate-the-average">9) Calculate the Average</h2>
+<p>Once we&rsquo;ve determined the sum and count of all the grades in the file, we can calculate the average using by dividing the sum by the count.</p>
+<pre class="codehilite"><code>average = sum/count</code></pre>
+
+
+<h2 id="10-print-the-result">10) Print the Result</h2>
+<p>Now that we&rsquo;ve determined the average, we can print it so we know if the test should be curved.</p>
+<pre class="codehilite"><code>print(average)</code></pre>
+
+
+<h2 id="solution">Solution)</h2>
+<pre class="codehilite"><code>sum = 0
+count = 0
+gradesFile = open('grades.txt')
+for line in gradeFile:
+    grade = int(line.split(&quot;:&quot;)[1])
+    sum = sum + grade
+    count = count + 1
+gradeFile.close()
+average = sum/count
+print(average)</code></pre>
