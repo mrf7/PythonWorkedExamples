@@ -12,7 +12,7 @@ You want to see how random a coin flip really is. To test this, you flip a coin 
 
 Count the number of all H's and T's in the file `coin.txt`. To determine the probability, you will also need to know the total number of tosses you made since you lost count in the 200's. After counting the number of heads, tails, and tosses, print the probability of heads and the probability of tails. Probability of heads is simply the number of heads divided by the total number of tosses and you can do the same for tails. 
 
-<LINK TO COIN.TXT>
+*LINK TO COIN.TXT*
 
 ## 1) Interpret the Problem
 For this problem we can use the count and filter loop patterns to count the number of H's and T's.
