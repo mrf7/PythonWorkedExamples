@@ -1,0 +1,104 @@
+<h3 id="problem-in-f17-2654-plus-or-minus">Problem in F17: 26.5.4) Plus or Minus</h3>
+<h3 id="problem-in-s18-454-plus-or-minus">Problem in S18: 45.4) Plus or Minus</h3>
+<h2 id="learning-objectives">Learning Objectives</h2>
+<ul>
+<li>Properly open and close a file</li>
+<li>Read the contents of a text file</li>
+<li>Iterate over the characters in a file </li>
+<li>Implement the count loop pattern</li>
+</ul>
+<h2 id="0-read-problem">0) Read Problem</h2>
+<p>You want to see how random a coin flip really is. To test this, you flip a coin until your hand gets tired. To record the results, you have a text document open and every time you flip you type either H or T, for heads or tails. After you spend all day flipping a coin, you realize you don&rsquo;t want to count all the H&rsquo;s and T&rsquo;s to check if they are equal as expected. You save your file as <code>coin.txt</code> and decide to let python do the work for you. </p>
+<p>Count the number of all H&rsquo;s and T&rsquo;s in the file <code>coin.txt</code>. To determine the probability, you will also need to know the total number of tosses you made since you lost count in the 200&rsquo;s. After counting the number of heads, tails, and tosses, print the probability of heads and the probability of tails. Probability of heads is simply the number of heads divided by the total number of tosses and you can do the same for tails. </p>
+<p><LINK TO COIN.TXT></p>
+<h2 id="1-interpret-the-problem">1) Interpret the Problem</h2>
+<p>For this problem we can use the count and filter loop patterns to count the number of H&rsquo;s and T&rsquo;s.</p>
+<p>The first thing we should do is open <code>coin.txt</code> so we understand the format of the file. When we do this we see the file is entirely on one line. The contents of the file look something like this </p>
+<pre class="codehilite"><code>HHTHHTTTHHTTHTHTTHHHHTHTTT...</code></pre>
+
+
+<p>Since the file is only one line, we need to look at each character in the file, not each line. This means instead of just iterating over the result of the call to <code>open()</code>, we should use <code>read()</code> to read all the text in the file and get it as a string. Then we can iterate over the string to check every character of the text. </p>
+<h2 id="2-opening-a-file">2) Opening a File</h2>
+<p>Working with files in python is just like working with files normally, we first have to open the file. To open a file in python, we use the <code>open()</code> function. This function takes the name of the file as a string and returns a file object representing the open file. We need to save this file so we can close it later:</p>
+<pre class="codehilite"><code>coinFile = open('coin.txt')</code></pre>
+
+
+<h2 id="3-read-the-file">3) Read the File</h2>
+<p>If we were to iterate over <code>coinFile</code> with <code>for flip in coinFile</code>, we would iterate over every line in the file. Since <code>coin.txt</code> is a single, massive line and we want every character of it, this doesn&rsquo;t work. To iterate over each character, we need the contents of  the file as a string. To get the file as a string, we use the <code>read()</code> function. The read function takes an open file object and returns a string of all the contents of that file. We save the result in a string variable which is what we will use in our for loop. </p>
+<pre class="codehilite"><code>coinString = coinFile.read()</code></pre>
+
+
+<h2 id="4-closing-the-file">4) Closing the File</h2>
+<p>Now that we&rsquo;ve read the contents of the file into a string, we don&rsquo;t need to have the file open anymore. You should always close a file once you are done with it. This is done with the <code>close()</code> method. Keep in mind that after closing a file, the file is not usable so make sure you close your files only after you are done using them</p>
+<pre class="codehilite"><code>coinFile.close()</code></pre>
+
+
+<h2 id="5-iterate-over-characters-in-a-file">5) Iterate Over Character&rsquo;s in a File</h2>
+<p>Now that we have the contents of the file in a string, we can use a for loop to iterate over each character in the file. </p>
+<pre class="codehilite"><code>for flip in coinString:
+    ...</code></pre>
+
+
+<h2 id="6-initializing-count-variables">6) Initializing Count Variables</h2>
+<p>Before we start our loop, we want to set up our variables for everything we need to count. We need to keep track of the number of heads, the number of tails, and the total number of flips. These variables should be created before our loop.</p>
+<pre class="codehilite"><code>numHeads = 0
+numTails = 0 
+numFlips = 0
+for flip in coinString:
+    ...</code></pre>
+
+
+<h2 id="7-implement-count-pattern">7) Implement Count Pattern</h2>
+<p>In our loop, we need to count the flips. Let&rsquo;s start with the easiest count to do: numFlips. Since every character is a flip, we should increment numFlips every time our loop runs. </p>
+<pre class="codehilite"><code>for flip in coinString:
+    numFlips = numFlips + 1</code></pre>
+
+
+<h2 id="8-implement-the-filter-pattern">8) Implement the Filter Pattern</h2>
+<p>Finding the number of heads and number of tails is a bit trickier. We should increment <code>numHeads</code> only if flip is <code>"H"</code> and numTails only if flip is <code>"T"</code>. This can be done with a simple if statement.</p>
+<pre class="codehilite"><code>if flip == &quot;H&quot;:
+    numHeads = numHeads + 1
+elif flip == &quot;T&quot;:
+    numTails = numTails + 1</code></pre>
+
+
+<h2 id="9-calculating-probability">9) Calculating Probability</h2>
+<p>To calculate the probability of heads and tails, we have to divide numHeads and numTails by numFlips. This will give us a number between 0 and 1 that represents the probability a coin flip is heads or tails, respectively.</p>
+<pre class="codehilite"><code>probHeads = numHeads / numFlips
+probTails = numTails / numFlips</code></pre>
+
+
+<p>If we have a perfectly fair coin, the probability should be .5 for both, meaning the coin has an equal chance of flipping heads and tails. Since this is the real world, we&rsquo;ll probably get numbers that are slightly off. </p>
+<h2 id="10-printing-results">10) Printing Results</h2>
+<p>Now the only thing left to do is print the probabilities we calculated to see how close to perfectly random our coin tosses were. Since probHeads and probTails are floats, we need to convert them to string using the <code>str()</code> method. </p>
+<pre class="codehilite"><code>print(&quot;Heads: &quot; + str(probHeads))
+print(&quot;Tails: &quot; + str(probTails))</code></pre>
+
+
+<h2 id="solution">Solution</h2>
+<pre class="codehilite"><code>coinFile = open(&quot;coin.txt&quot;)
+coinString = coinFile.read()
+coinFile.close()
+
+numHeads = 0 
+numTails = 0
+numFlips = 0
+for flip in coinString: 
+    numFlips = numFlips + 1
+    if flip == &quot;H&quot;:
+        numHeads = numHeads + 1
+    elif flip == &quot;T&quot;:
+        numTails = numTails + 1
+
+probHeads = numHeads / numFlips
+probTails = numTails / numFlips
+print(&quot;Heads: &quot; + str(probHeads))
+print(&quot;Tails: &quot; + str(probTails))</code></pre>
+
+
+<p>When we run this with the file above, the output we get is </p>
+<pre class="codehilite"><code>Heads: 0.5202020202020202
+Tails: 0.4797979797979798</code></pre>
+
+
+<p>Which means about 52% of the flips were heads and 48% were tails. </p>
