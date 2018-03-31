@@ -8,7 +8,13 @@ Problem/Motivation
 		DO WEs help students get started (Survey)
 
 Background and Related Work
-
+    Discuss Briana Morrison's Work 
+    Other References
+        http://journals.sagepub.com/doi/abs/10.3102/00346543070002181
+            Also, examples should be presented in close proximity to matched practice problems.
+    Discuss class background
+        Analyzed data from the previous semester that had no worked examples 
+        
 	
 Approach and Uniqueness
 	Creation
