@@ -1,0 +1,25 @@
+To solve confusion about WE 
+    At the beginning of some blockpy problems, there was a link to a worked example
+        <picture of link to WE>
+ 
+1. 
+   
+2. 
+    Never vs Once/Twice provides significantly different buckets 
+        Students who choose never didn't give them a chance 
+        Students who chose once/twice gave them a chance and felt they weren't usefull enough to try again
+            Could also be students who only used them when stuck 
+3. When do students read
+    Allow multiple selection
+    
+    Beore looking at problems
+    When stuck doing the problems
+    When unsure how to start
+    After completing the problem 
+
+4. Why do students  read
+    Better understand
+        programming assignment
+        the concepts involved in the lesson
+        how to get started on the assignment
+        how to solve a specific part of the assignment

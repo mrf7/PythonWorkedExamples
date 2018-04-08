@@ -5,22 +5,24 @@ How accessible were the worked examples in the way provided them
 	Never	Once/Twice	Sometimes	Usually		Every Time
 For the students that were aware of the WEs, how likely were they to consciously read them?
 
-3. For problems with a WE linked, I usually read the WE:
-	Once I see it before trying to solve the problem
-	Once I got stuck trying to solve the problem
-	Before starting the problem when I am lost on how to start (wording?) 
-	N/A
+3. For problems with a WE linked, I usually read the WE: (Multiple Selection)
+    Before looking at problems
+    When stuck doing the problems
+    When unsure how to start
+    After completing the problem 
+    N/A
 Partially duplicates 4, but also could provide some useful info on when students decide they should read the WE. 
 
-4. If/When you read the WEs, why did you usually open them?
+4. If/When you read the WEs, why did you usually open them? (Multiple Selection)
 	Because it was there 
 	Because I was confused about what the problem was asking
 	Because I was confused about how to solve the problem 
 	Because my answer to the problem wasn't working and I didn't know why
 	Other:
+    
 Determines motivation for reading WE. Could allow tailoring examples to better help the students that actually use them
 
-5. After reading the worked example I usually:
+5. After reading the worked example I usually: (Multiple Selection)
 	Understood the concept better
 	Understood the question better
 	Understood how to get started better 
@@ -29,5 +31,5 @@ Determines motivation for reading WE. Could allow tailoring examples to better h
 Shows to what extent the examples helped. May want to allow students to select multiple 
 
 6. Overall, how helpful were the worked examples for you (0 if never read)
-	0-7
-Shows overall usefullness of the worked examples
+	0-5 Qualtrics Scale
+Shows overall usefulness of the worked examples
