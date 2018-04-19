@@ -1,0 +1,6 @@
+Demographics
+    Simple table comparing prior & no prior for each semester 
+    
+Do WEs improve performance 
+    Split by usage of WEs, controlled by prior experience 
+        Measure Time on task (mean + std), completions (%), runs (mean + std)
