@@ -1,0 +1,60 @@
+Problem 
+	Enrollments in CS Classes are Increasing and Many Departments Can't keep up [NAS]
+
+	
+Hypothesis 
+	Adding worked examples on difficult problems will improve understanding of both the problem and the concept 
+Research Questions 
+	Do WEs improve understanding
+	Do students take advantage of WEs 
+	Do students find WEs helpful
+
+Prior Work
+	[Morrison] B Morrison Subgoal Labels 
+		Tried to determine if giving students subgoal labels is better 
+		Performance gains were not significant 
+	This vs Prior 
+		This specificially tries to see if completion on targeted difficult problems can be improved by including a relevant worked example
+	Find people that have cited Briana
+	
+Ed theory  
+	Worked Examples[Renkl][Sweller]
+		[Renkl] Suggests "Worked-examples are designed to support initial acquisition of cognitive skills"
+	Example-Problem Pairs [Skudder]
+
+Context 
+	Python class
+	demographics 
+	
+Methodology/Experiment design 
+	Baseline F17 vs Experimental S18
+	Show some WE 
+	Maybe example of a problem they were given 
+	Explain enviroment worked in (Blockpy)
+	
+Data COllection
+	Survey data
+	Programmatic method of collection
+
+Results will likely be on last row 
+	Graphs/ Tables 
+	Statistics etc 
+Conclusions
+	take results and tell what we learned 
+	Possibly 
+	
+Future Work 
+	Have 2 good things ready to discuss when asked
+		Interactive WEs 
+		More Concise WEs with only subgoal labels, not as much description
+		Other strategies to better reach students in classes with high enrollment 
+		
+References 
+	[1*] National Academies of Sciences, Engineering, and Medicine. 2018. Assessing and Responding to the Growth of Computer Science Undergraduate Enrollments. Washington, DC: The National Academies Press. https://doi.org/10.17226/24926.
+	
+	
+	[2*] Briana B. Morrison, Lauren E. Margulieux, and Mark Guzdial. 2015. Subgoals, Context, and Worked Examples in Learning Computing Problem Solving. In Proceedings of the eleventh annual International Conference on International Computing Education Research (ICER '15). ACM, New York, NY, USA, 21-29. DOI: http://dx.doi.org/10.1145/2787622.2787733
+	
+	[3*] Renkl, A. (2005). The worked-out examples principle in multimedia learning. In Mayer, R.E. (Ed.), The Cambridge Handbook of Multimedia Learning. Cambridge: Cambridge University Press. View in a new window
+	
+	[4*] Sweller, J., & Cooper, G.A. (1985). The use of worked examples as a substitute for problem solving in learning algebra. Cognition and Instruction, 2(1), 59–89.
