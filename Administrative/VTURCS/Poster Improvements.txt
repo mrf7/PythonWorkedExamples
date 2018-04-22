@@ -1,19 +1,6 @@
 Questions:
 
-Should we show self rported usage of WEs (50% of students claimed to read the Worked example at least most of the time) 
-	Instead of/addition to measure usage
-	% of most of the time is about the same as average measured usage, so one or the other is probably enough
-
-How should we display helpfulness data
-	~70% of students without prior experience found the examples helpful
-	Only ~12% w/o prior chose disagree
-	Map it to binary decision like Prior and comfort? 
-	Something wrong with the tidying, ExampleWasHelpful occasionally has NaN as a value 
-
-Cleaner way of displaying WE Use X Prior Exp vs Runs/TOT? 
-
-On WE correlation to increased runs/tot
-	While Using WE increased avg runs ~3x for students regardless of prior (by comfort: 3x for uncomfortable, 2x for comfortable), 
-	#runs and TOT is drasitcally lower in noWE compared to F17. Could support conclusion of #runs causing WE use
-
 How to incorporate whitney u and cohens tests into the poster?
+
+f_oneway 
+    anova 
